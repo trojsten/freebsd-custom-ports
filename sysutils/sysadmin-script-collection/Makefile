@@ -11,7 +11,7 @@ COMMENT=	Collection of scripts that simplify maintenance of our servers
 LICENSE=	mit
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
-		tarsnap:${PORTSDIR}/sysutils/tarsnap
+		python3:${PORTSDIR}/lang/python3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trojsten
