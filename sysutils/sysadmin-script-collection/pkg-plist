@@ -1,0 +1,6 @@
+bin/mgit
+bin/mgit-init
+bin/properly
+bin/sgit
+bin/zfs-shell
+etc/properly.conf.sample
