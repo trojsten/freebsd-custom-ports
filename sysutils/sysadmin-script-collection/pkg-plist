@@ -3,4 +3,8 @@ bin/mgit-init
 bin/properly
 bin/sgit
 bin/zfs-shell
+bin/repo-dirty-checker
+bin/setup-log
 etc/properly.conf.sample
+etc/repo-dirty-checker.conf.sample
+etc/setup-log.conf.sample
