@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	kamila@ksp.sk
 COMMENT=	Collection of scripts that simplify maintenance of our servers
 
-LICENSE=	mit
+LICENSE=	MIT
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 		python3:${PORTSDIR}/lang/python3
