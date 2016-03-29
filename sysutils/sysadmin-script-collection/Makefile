@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysadmin-script-collection
-PORTVERSION=	1.0.20160325
+PORTVERSION=	1.0.20160329
 CATEGORIES=	sysutils
 
 MAINTAINER=	kamila@ksp.sk
@@ -15,17 +15,21 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trojsten
-GH_TAGNAME=	5f6caba
+GH_TAGNAME=	v1.0
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-BIN_FILES=	properly/properly \
-		metadata-git-wrapper/mgit metadata-git-wrapper/mgit-init \
+BIN_FILES=	metadata-git-wrapper/mgit metadata-git-wrapper/mgit-init \
+		properly/properly \
+		repo-dirty-checker/repo-dirty-checker \
 		sudo-git-wrapper/sgit \
+		setup-log/setup-log setup-log/setup-log-command \
 		zfs-shell/zfs-shell
 
-ETC_FILES=	properly/properly.conf
+ETC_FILES=	properly/properly.conf \
+		repo-dirty-checker/repo-dirty-checker.conf \
+		setup-log/setup-log.conf
 
 post-patch:
 .for _file in ${BIN_FILES}
