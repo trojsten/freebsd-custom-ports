@@ -5,7 +5,6 @@ PORTVERSION=	2.0.13
 PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
-CONFLICTS_INSTALL= uwsgi
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
@@ -21,7 +20,6 @@ PLUG_PHP_USES=          php:embed,build
 PLUG_PSGI_USES=         perl5
 USE_PYTHON=	        distutils
 USE_RC_SUBR=	        uwsgi
-USE_PHP=                session:build
 
 PLUG_CGI_DESC= Build the CGI plugin
 PLUG_JVM_DESC= Build the JVM plugin
@@ -93,6 +91,11 @@ JAVA_RUN=       yes
 .if ${PORT_OPTIONS:MPLUG_RACK}
 USE_RUBY=       yes
 .endif
+
+.if ${PORT_OPTIONS:MPLUG_PHP}
+USE_PHP=                session:build
+.endif
+
 
 post-patch:
 	${REINPLACE_CMD} -e s#@JSON@#${O_JSON}# -e s#@XML@#${O_XML}# -e s#@PCRE@#${O_PCRE}# ${WRKSRC}/buildconf/base.ini
